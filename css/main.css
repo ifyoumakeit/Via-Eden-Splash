@@ -191,7 +191,7 @@ body::before {
   100%  { transform: rotate(360deg); }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
 
     .underlay__video {
         display: block;
