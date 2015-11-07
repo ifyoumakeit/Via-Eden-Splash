@@ -9,19 +9,21 @@
     box-sizing: border-box;
 }
 
-body {
-    color: #ffffff;
-    text-align: center;
-    font-family: "Univers Next W04 Light Cond", sans-serif;
-    font-weight: 300;
+html {
+    height: 100%;
 }
+
 
 h1, h2, h3 {
     font-weight: 300;
 }
 
 
-.underlay {
+body {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Univers Next W04 Light Cond", sans-serif;
+    font-weight: 300;
     background: url(../img/background.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
@@ -32,11 +34,10 @@ h1, h2, h3 {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
 }
 
-.underlay::before {
-    z-index: 1;
+body::before {
+    z-index: -1;
     position: fixed;
     content: '';
     top: 0;
@@ -56,13 +57,14 @@ h1, h2, h3 {
 }
 
 .underlay__video {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    position: fixed;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
+    z-index: -100;
+    top: 0;
+    left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
