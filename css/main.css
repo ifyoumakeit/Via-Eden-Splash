@@ -11,6 +11,7 @@
 
 html {
     height: 100%;
+    background: rgba(40,21,80,1);
 }
 
 
@@ -23,6 +24,7 @@ body {
     text-align: center;
     font-family: "Univers Next W04 Light Cond", sans-serif;
     font-weight: normal;
+    display: none;
 }
 
 .background__image {

@@ -37,4 +37,6 @@ $(function(){
     $('.underlay').append('<video class="underlay__video" loop autoplay><source src="img/background.mp4" type="video/mp4"></video>')
   }
 
+  $('body').fadeIn(800)
+
 })
