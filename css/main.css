@@ -153,7 +153,7 @@ body::before {
     background: #121F6B;
     border: 1px solid #0E1852;
     border-radius: 2px;
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #1B2F9E;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 #1B2F9E
     height: 40px;
     width: 300px;
     font-size: 14px;
@@ -190,6 +190,16 @@ body::before {
 }
 
 @keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotate {
   0%    { transform: rotate(0deg); }
   100%  { transform: rotate(360deg); }
 }
