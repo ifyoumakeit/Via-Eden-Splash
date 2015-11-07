@@ -1,3 +1,10 @@
+@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=b5e8d865-e485-4569-9c05-9fc31d547ba2&fontids=1449379");
+@font-face{
+    font-family: "Univers Next W04 Light Cond";
+    src:url("../fonts/47e2578e-a7a6-40f8-9d6f-81126961ddc6.eot?#iefix");
+    src:url("../fonts/47e2578e-a7a6-40f8-9d6f-81126961ddc6.eot?#iefix") format("eot"),url("../fonts/ec4b5818-5546-4bf3-9a93-536f8a8bc947.woff2") format("woff2"),url("../fonts/0dc4692c-da48-4a2f-8782-d450d55382a6.woff") format("woff"),url("../fonts/e16849c3-eca1-4675-8dda-b790dfd1af8e.ttf") format("truetype"),url("../fonts/24cabe40-08ae-4519-a03b-ec41920bbf83.svg#24cabe40-08ae-4519-a03b-ec41920bbf83") format("svg");
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,7 +12,7 @@
 body {
     color: #ffffff;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Univers Next W04 Light Cond", sans-serif;
     font-weight: 300;
 }
 
@@ -14,7 +21,22 @@ h1, h2, h3 {
 }
 
 
+.underlay {
+    background: url(../img/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
 .underlay::before {
+    z-index: 1;
     position: fixed;
     content: '';
     top: 0;
@@ -22,30 +44,27 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     background: rgba(40,21,80,1);
-    z-index: -99;
     background: -moz-linear-gradient(top, rgba(40,21,80,1) 0%, rgba(40,21,80,0) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(40,21,80,1)), color-stop(100%, rgba(40,21,80,0)));
     background: -webkit-linear-gradient(top, rgba(40,21,80,1) 0%, rgba(40,21,80,0) 100%);
     background: -o-linear-gradient(top, rgba(40,21,80,1) 0%, rgba(40,21,80,0) 100%);
     background: -ms-linear-gradient(top, rgba(40,21,80,1) 0%, rgba(40,21,80,0) 100%);
     background: linear-gradient(to bottom, rgba(40,21,80,1) 0%, rgba(40,21,80,0) 100%);
+    background-blend-mode: multiply;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#281550', endColorstr='#281550', GradientType=0 );
 
 }
 
 .underlay__video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    background: url(img/background.jpg) no-repeat;
-    background-size: cover;
 }
 
 .header {
@@ -65,8 +84,8 @@ h1, h2, h3 {
 }
 
 .header__logo {
-    width: 109px;
-    margin: 80px auto 100px;
+    width: 32%;
+    margin: 90px auto 100px;
 }
 
 .main__title {
@@ -75,6 +94,14 @@ h1, h2, h3 {
 
 .form {
     margin: 10px;
+    opacity: 1;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+}
+
+.form.-fade-out {
+    opacity: 0;
 }
 
 .field {
@@ -84,7 +111,16 @@ h1, h2, h3 {
     border-radius: 2px;
     position: relative;
     vertical-align: top;
-    margin-bottom: 10px;
+    width: auto;
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto 10px;
+}
+
+.field.-error {
+    border-color: #FF4D6A;
+    margin-bottom: 4px;
 }
 
 .field__input {
@@ -94,7 +130,8 @@ h1, h2, h3 {
     font-size: 18px;
     top: 50%;
     left: 0;
-    width: 100%;
+    width: 300px;
+    max-width: 100%;
     height: 100%;
     border: 0;
     padding: 0 12px;
@@ -116,7 +153,7 @@ h1, h2, h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: transform, opacity 0.2s, 0.2s;
+    transition: transform, opacity 0.5s, 0.5s;
     color: #ffffff;
     opacity: 1;
 }
@@ -132,8 +169,41 @@ h1, h2, h3 {
     border: 1px solid #0E1852;
     border-radius: 2px;
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #1B2F9E;
-    width: 100%;
     height: 40px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.error-msg {
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.5);
+    color: #FF4D6A;
+    text-align: center;
+    padding: 2px 6px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.loader {
+  margin: 0 auto;
+  height: 30px;
+  width: 30px;
+  animation: rotate 0.8s infinite linear;
+  border: 3px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: none;
+}
+
+.-hide {
+    display: none;
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
 }
 
 @media (min-width: 640px) {
@@ -145,21 +215,5 @@ h1, h2, h3 {
     .header__logo {
         width: 131px;
     }
-
-    .field {
-        display: inline-block;
-        width: 300px;
-        margin-right: 5px;
-    }
-
-    .field__label {
-        transform: translate(-200%, -50%);
-    }
-
-    .form__submit {
-        height: 50px;
-        width: 200px;
-    }
-
 
 }
