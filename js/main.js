@@ -34,7 +34,7 @@ $('form').on('submit', function(evt){
 
 $(function(){
   if($(window).width() > 768){
-    $('.underlay__video').attr('autoplay', true)
+    $('.underlay').append('<video class="underlay__video" loop autoplay><source src="img/background.mp4" type="video/mp4"></video>')
   }
 
 })
