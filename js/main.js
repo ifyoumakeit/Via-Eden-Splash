@@ -9,6 +9,7 @@ $('form').on('submit', function(evt){
   success = function(){
     $('.form').addClass('-fade-out')
     $('.main__title').html('Thank you')
+    $('.field__input').remove()
   }
 
   var email = $('#entry_1656576003').val();
