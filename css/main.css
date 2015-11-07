@@ -15,14 +15,14 @@ html {
 
 
 h1, h2, h3 {
-    font-weight: 300;
+    font-weight: normal;
 }
 
 body {
     color: #ffffff;
     text-align: center;
     font-family: "Univers Next W04 Light Cond", sans-serif;
-    font-weight: 300;
+    font-weight: normal;
     background: url(../img/background.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
@@ -156,7 +156,10 @@ body::before {
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #1B2F9E;
     height: 40px;
     width: 300px;
+    font-size: 14px;
+    letter-spacing: 1px;
     max-width: 100%;
+    line-height: 14px;
 }
 
 .error-msg {

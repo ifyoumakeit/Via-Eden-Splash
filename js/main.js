@@ -31,3 +31,10 @@ $('form').on('submit', function(evt){
       $('.error-msg').show().html('Please enter a valid email address.')
   }
 });
+
+$(function(){
+  if($(window).width() > 768){
+    $('.underlay__video').attr('autoplay', true)
+  }
+
+})
