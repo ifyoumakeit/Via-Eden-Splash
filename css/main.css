@@ -40,6 +40,9 @@ body {
     transform: translateX(-50%);
 }
 
+.container {
+    margin-bottom: 24px;
+}
 
 body::before {
     z-index: -1;
