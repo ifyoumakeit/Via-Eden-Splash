@@ -82,7 +82,7 @@ body {
 
 .main {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .header__subtitle {
@@ -149,9 +149,9 @@ body {
     height: 100%;
     border: 0;
     padding: 0 12px;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .field__input:-webkit-autofill {
@@ -168,6 +168,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: transform, opacity 0.5s, 0.5s;
     color: #ffffff;
