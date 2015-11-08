@@ -25,7 +25,6 @@ body {
     font-family: "Univers Next W04 Light Cond", sans-serif;
     font-weight: normal;
     display: none;
-    overflow-x: hidden;
 }
 
 .background__image {
@@ -42,7 +41,11 @@ body {
 }
 
 .container {
-    margin-bottom: 24px;
+    padding-bottom: 24px;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    height: 100%;
 }
 
 body::before {
