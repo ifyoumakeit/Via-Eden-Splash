@@ -28,7 +28,7 @@ body {
 }
 
 .background__image {
-    position: absolute;
+    position: fixed;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -43,7 +43,7 @@ body {
 
 body::before {
     z-index: -1;
-    position: absolute;
+    position: fixed;
     content: '';
     top: 0;
     left: 0;
@@ -222,7 +222,7 @@ body::before {
 
     .underlay__video {
         display: block;
-        position: absolute;
+        position: fixed;
         min-width: 100%;
         min-height: 100%;
         width: auto;
