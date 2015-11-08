@@ -12,6 +12,7 @@
 html {
     height: 100%;
     background: rgba(40,21,80,1);
+    -webkit-font-smoothing: antialiased
 }
 
 
@@ -33,10 +34,11 @@ body {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
+    z-index: -3;
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 
@@ -48,8 +50,8 @@ body {
     height: 100%;
 }
 
-body::before {
-    z-index: -1;
+.overlay {
+    z-index: 0;
     position: absolute;
     content: '';
     top: 0;
@@ -74,6 +76,13 @@ body::before {
 
 .header {
     margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    position: relative;
+    z-index: 1;
 }
 
 .header__subtitle {
@@ -140,7 +149,9 @@ body::before {
     height: 100%;
     border: 0;
     padding: 0 12px;
-    transform: translateY(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .field__input:-webkit-autofill {
@@ -234,7 +245,7 @@ body::before {
         min-height: 100%;
         width: auto;
         height: auto;
-        z-index: -100;
+        z-index: -2;
         top: 0;
         left: 50%;
         -webkit-transform: translateX(-50%);

@@ -34,7 +34,7 @@ $('form').on('submit', function(evt){
 
 $(function(){
   if($(window).width() > 768){
-    $('.underlay').append('<video class="underlay__video" loop autoplay poster="img/background.jpg"><source src="img/background.mp4" type="video/mp4"></video>')
+    $('<video class="underlay__video" loop autoplay poster="img/background.jpg"><source src="img/background.mp4" type="video/mp4"></video>').insertAfter('.overlay')
   }
 
   $('body').fadeIn(800)
