@@ -165,12 +165,13 @@ body {
 .field__label {
     position: absolute;
     font-size: 18px;
-    position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    -webkit-transition: transform, opacity 0.5s, 0.5s;
+    -ms-transition: transform, opacity 0.5s, 0.5s;
     transition: transform, opacity 0.5s, 0.5s;
     color: #ffffff;
     opacity: 1;
@@ -179,6 +180,8 @@ body {
 
 .field__input:valid + .field__label,
 .field__input:focus + .field__label {
+    -webkit-transform: translate(-200%, -50%);
+    -ms-transform: translate(-200%, -50%);
     transform: translate(-200%, -50%);
     opacity: 0;
 }
@@ -212,6 +215,8 @@ body {
   margin: 0 auto;
   height: 30px;
   width: 30px;
+  -webkit-animation: rotate 0.8s infinite linear;
+  -ms-animation: rotate 0.8s infinite linear;
   animation: rotate 0.8s infinite linear;
   border: 3px solid #fff;
   border-right-color: transparent;
@@ -251,6 +256,7 @@ body {
         top: 0;
         left: 50%;
         -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     }
 
