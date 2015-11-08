@@ -154,6 +154,7 @@ body::before {
     transition: transform, opacity 0.5s, 0.5s;
     color: #ffffff;
     opacity: 1;
+    pointer-events: none;
 }
 
 .field__input:valid + .field__label,
